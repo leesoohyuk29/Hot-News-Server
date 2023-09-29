@@ -1,10 +1,5 @@
 /*
- * @Author: Peanut
- * @Description:  nodejs定时爬取微博实时热搜
- * @Date: 2020-05-01 21:51:33
- * @Last Modified by: Peanut.ZhangHuan
- * @Last Modified time: 2023-01-28 10:23:02
- * 程序员导航站：https://iiter.cn
+ * nodejs定时爬取微博实时热搜
  */
 const express = require('express');
 const app = express();
@@ -74,20 +69,6 @@ app.listen(3000, () => {
   console.log('Server is listening on port 3000');
 });
 
-/*
- * schedule
-
-*    *    *    *    *    *    
-┬    ┬    ┬    ┬    ┬    ┬
-│    │    │    │    │    │
-│    │    │    │    │    └ day of week (0 - 7) (0 or 7 is Sun)
-│    │    │    │    └───── month (1 - 12)
-│    │    │    └────────── day of month (1 - 31)
-│    │    └─────────────── hour (0 - 23)
-│    └──────────────────── minute (0 - 59)
-└───────────────────────── second (0 - 59, OPTIONAL)
-
- */
 /**
  * 每分钟第30秒定时执行爬取任务
  */

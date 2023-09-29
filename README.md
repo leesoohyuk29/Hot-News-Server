@@ -19,5 +19,3 @@ npm start
 - [superagent](https://github.com/visionmedia/superagent)
 - [cheerio](https://github.com/cheeriojs/cheerio)
 - [node-schedule](https://github.com/node-schedule/node-schedule)
-
-程序员导航站：[https://iiter.cn](https://iiter.cn)
