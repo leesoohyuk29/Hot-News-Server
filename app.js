@@ -94,6 +94,8 @@ app.listen(3000, () => {
   console.log('Server is listening on port 3000');
 });
 
+// module.exports = app;
+
 /**
  * 每分钟第30秒定时执行爬取任务
  */
