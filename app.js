@@ -18,7 +18,7 @@ const superagent = require("superagent"); // 发送HTTP请求的库
 // const nodeSchedule = require("node-schedule");   // 定时任务调度库
 
 // 获取访问页面的URL等信息
-const pagesConfig = require('./pagesConfig');
+const pagesConfig = require('./src/config/pagesConfig');
 
 function sendHotList() {
   try {

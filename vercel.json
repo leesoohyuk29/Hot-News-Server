@@ -19,7 +19,7 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/api/hotList"
+      "destination": "/src/server/server"
     }
   ]
 }

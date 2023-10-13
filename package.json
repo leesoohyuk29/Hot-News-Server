@@ -4,7 +4,8 @@
   "description": "一个实时爬取微博热搜的 nodejs 程序",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node ./src/server/server.js",
+    "old-start": "node app.js"
   },
   "keywords": [
     "微博热搜爬虫",
