@@ -2,7 +2,7 @@ const cheerio = require("cheerio"); // HTML解析库
 const superagent = require("superagent"); // 发送HTTP请求的库
 
 // 获取访问页面的URL等信息
-const pagesConfig = require('../pagesConfig');
+const pagesConfig = require('../src/config/pagesConfig');
 
 // api/json.js
 // req接收所有请求信息，res 是响应信息
