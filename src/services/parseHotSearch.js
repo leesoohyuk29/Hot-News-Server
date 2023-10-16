@@ -35,9 +35,7 @@ const parseHotSearchInfo = ($, pageInfo) => {
       const hotValue = $td.find("span")?.text()
         ? $td.find("span")?.text().trim()
         : $(this).children().eq(2).text().trim(); // 热度值（今日热榜热搜信息中，第二个td中的数据为热搜值）
-      const icon = $td.find("img")?.attr("src") // 图标链接
-        ? "https:" + $td.find("img").attr("src")
-        : "";
+      const icon = $td.find("img")?.attr("src"); // 图标链接
       hotList.push({
         index,
         link,
