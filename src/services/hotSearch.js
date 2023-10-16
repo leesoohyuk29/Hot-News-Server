@@ -8,11 +8,11 @@ const parseHotSearchInfo = require('./parseHotSearch');
 function getHotSearchList(pageName) {
   return new Promise((resolve, reject) => {
     const pageInfo = pagesConfig[pageName]; // 页面的配置信息项，包含页面地址、热搜地址、cookie、DOM中热搜数据层级地址
-    superagent.get(pageInfo.pageURL + pageInfo.hotSearchURL).set("cookie", pageInfo.hotSearchCookies).end((err, res) => {
-      if (err) reject(`request error：${err}`);
+    const { pageURL, hotSearchURL, hotSearchCookies } = pageInfo ?? {};
+    superagent.get(pageURL + hotSearchURL).set("cookie", hotSearchCookies).end((err, res) => {
       const $ = cheerio.load(res.text); // 使用cheerio解析HTML内容
       const hotList = parseHotSearchInfo($, pageInfo); // 使用parseHotSearchInfo函数解析热搜信息
-      hotList.length ? resolve(hotList) : reject("error"); // 如果热搜列表不为空，返回列表；否则，返回错误信息
+      hotList.length ? resolve(hotList) : reject(`request error：${err}`); // 如果热搜列表不为空，返回列表；否则，返回错误信息
     });
   })
   .catch(error => {
