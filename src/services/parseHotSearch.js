@@ -8,7 +8,7 @@ const parseHotSearchInfo = ($, pageInfo) => {
       const $item = $(this);
       const link = $item.find("a").attr("href");
       const text = $item.children().eq(3).children().find("div").text().trim();
-      const hotValue = $item.children().eq(1).children().eq(1).text();
+      const hotValue = $item.children().eq(1).children().eq(1).text().trim();
       hotList.push({
         index,
         link,
@@ -17,10 +17,10 @@ const parseHotSearchInfo = ($, pageInfo) => {
       });
     } else if (name === '虎扑') {
       const $item = $(this);
-      const link = $item.find("a").attr("href");
+      const link = pageURL + $item.find("a").attr("href");
       const text = $item.find("a").find("span").text();
       const hotValue = $item.children().eq(1).text();
-      const reply = $item.children().eq(2).text();
+      const reply = $item.children().eq(2).text().trim();
       hotList.push({
         index,
         link,
@@ -33,8 +33,8 @@ const parseHotSearchInfo = ($, pageInfo) => {
       const link = pageURL + $td.find("a").attr("href"); // 热搜链接
       const text = $td.find("a").text(); // 热搜文本
       const hotValue = $td.find("span")?.text()
-        ? $td.find("span")?.text()
-        : $(this).children().eq(2).text(); // 热度值（今日热榜热搜信息中，第二个td中的数据为热搜值）
+        ? $td.find("span")?.text().trim()
+        : $(this).children().eq(2).text().trim(); // 热度值（今日热榜热搜信息中，第二个td中的数据为热搜值）
       const icon = $td.find("img")?.attr("src") // 图标链接
         ? "https:" + $td.find("img").attr("src")
         : "";
