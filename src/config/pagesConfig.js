@@ -24,19 +24,12 @@ const pagesConfig = {
   },
   'tt': {
     name: '头条',
-    pageURL: 'https://tophub.today',
-    hotSearchURL: '/n/x9ozB4KoXb',
-    hotSearchCookies: '',
-    DOMSpan: '.table tbody tr'
+    pageURL: 'https://www.toutiao.com',
+    hotSearchURL: '/',
+    hotSearchCookies: '`local_city_cache=%E5%B9%BF%E5%B7%9E; s_v_web_id=verify_lno9dybw_v4GVHN8S_ZIYV_4DHt_9Zbp_T3gV5Z4wT54n; __ac_signature=_02B4Z6wo00f01H0s5UgAAIDA.S4fCZ585lR9COHAAHprt37WvnqN52mgAgP1g3kqL99u-9ikDh6kQzHub89SrUKv5F7QR3zxdogCosHJ-A-fAr-t0PYgRZtst-2GhZUs1eeN8TSx-08BvEmK36; __ac_nonce=06528eae800cd159983a5`',
+    DOMSpan: '.main-content .right-container .show-monitor .ttp-hot-board ol',
+    Api: 'https://www.toutiao.com/hot-event/hot-board/?origin=toutiao_pc&_signature=_02B4Z6wo00901TVtKYQAAIDBtW.Txg9YlzU1SS0AACh2uzL6W7csAfbWbUopUIpjoWUbN79Ys2cTXsLl7mJyeB8G7Uix2wuYCbf8RlHrnUXKXFu0Y1xqqQWAc4WKOMamTVn40sZyM1sgGb5Hbf'
   },
-  // 'tt': {
-  //   name: '头条',
-  //   pageURL: 'https://www.toutiao.com',
-  //   hotSearchURL: '/',
-  //   hotSearchCookies: '`local_city_cache=%E5%B9%BF%E5%B7%9E; s_v_web_id=verify_lno9dybw_v4GVHN8S_ZIYV_4DHt_9Zbp_T3gV5Z4wT54n; __ac_signature=_02B4Z6wo00f01H0s5UgAAIDA.S4fCZ585lR9COHAAHprt37WvnqN52mgAgP1g3kqL99u-9ikDh6kQzHub89SrUKv5F7QR3zxdogCosHJ-A-fAr-t0PYgRZtst-2GhZUs1eeN8TSx-08BvEmK36; __ac_nonce=06528eae800cd159983a5`',
-  //   DOMSpan: '.main-content .right-container .show-monitor .ttp-hot-board ol',
-  //   Api: 'https://www.toutiao.com/hot-event/hot-board/?origin=toutiao_pc&_signature=_02B4Z6wo00901TVtKYQAAIDBtW.Txg9YlzU1SS0AACh2uzL6W7csAfbWbUopUIpjoWUbN79Ys2cTXsLl7mJyeB8G7Uix2wuYCbf8RlHrnUXKXFu0Y1xqqQWAc4WKOMamTVn40sZyM1sgGb5Hbf'
-  // },
   'blbl': {
     name: '哔哩哔哩',
     pageURL: 'https://tophub.today',
