@@ -4,18 +4,7 @@ const parseHotSearchInfo = ($, pageInfo, text) => {
   const { DOMSpan, pageURL, name } = pageInfo ?? {};
   let hotList = [];
   // 今日头条不需要通过DOM爬取数据，是直接通过接口调用获取的数据
-  if (name === '头条') {
-    const { data } = JSON.parse(text || {}) || [];
-    data.forEach((item, index) => {
-      hotList.push({
-        index,
-        link: item.Url,
-        text: item.Title,
-        hotValue: item.HotValue
-      });
-    });
-    return hotList;
-  }
+  if (['头条'].includes(name)) return getInfoThroughApi(name, text);
   $(DOMSpan).each(function (index) {
     if (index > 30) return; // 限制录入数据数量最多为30条
     if (name === '百度') {
@@ -61,5 +50,22 @@ const parseHotSearchInfo = ($, pageInfo, text) => {
   });
   return hotList;
 };
+
+const getInfoThroughApi = (name, original) => {
+  const hotList = [];
+  const originalTemp = JSON.parse(original || {}) || []; // 原数据
+  if (name === '头条') {
+    const newsInfo = originalTemp?.data ?? [];
+    newsInfo.forEach((item, index) => {
+      hotList.push({
+        index,
+        link: item.Url,
+        text: item.Title,
+        hotValue: item.HotValue
+      });
+    });
+    return hotList;
+  }
+}
 
 module.exports = parseHotSearchInfo;
