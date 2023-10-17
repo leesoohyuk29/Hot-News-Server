@@ -4,6 +4,7 @@ const parseHotSearchInfo = ($, pageInfo) => {
   const { DOMSpan, pageURL, name } = pageInfo ?? {};
   let hotList = [];
   $(DOMSpan).each(function (index) {
+    if (index > 30) return; // 限制录入数据数量最多为30条
     if (name === '百度') {
       const $item = $(this);
       const link = $item.find("a").attr("href");
