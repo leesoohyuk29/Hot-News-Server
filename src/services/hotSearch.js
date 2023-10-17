@@ -5,6 +5,9 @@ const superagent = require("superagent");
 const pagesConfig = require('../config/pagesConfig');
 const parseHotSearchInfo = require('./parseHotSearch');
 
+// const fs = require("fs"); // 文件操作库
+// const nodeSchedule = require("node-schedule");   // 定时任务调度库
+
 function getHotSearchList(pageName) {
   return new Promise((resolve, reject) => {
     const pageInfo = pagesConfig[pageName]; // 页面的配置信息项，包含页面地址、热搜地址、cookie、DOM中热搜数据层级地址
@@ -20,5 +23,23 @@ function getHotSearchList(pageName) {
     throw error; // 抛出错误，以便上层调用栈也可以捕获和处理错误
   });
 }
+
+// /**
+//  * 每分钟第30秒定时执行爬取任务
+//  */
+// nodeSchedule.scheduleJob("10 * * * * *", async function () {
+//   try {
+//     const hotList = await getHotSearchList('wb'); // 获取热搜列表数据
+//     console.log('ʕ̡̢̡ʘ̅͟͜͡ʘ̲̅ʔ̢̡̢🚀 ~ hotList.length:', hotList.length);
+//     await fs.writeFileSync(
+//       `${__dirname}/hotSearch.json`,
+//       JSON.stringify(hotList),
+//       "utf-8"
+//     ); // 将热搜列表数据写入JSON文件
+//     console.log("写入成功", Date.now()); // 打印写入成功的消息和当前时间戳
+//   } catch (error) {
+//     console.error(error);
+//   }
+// });
 
 module.exports = getHotSearchList;
